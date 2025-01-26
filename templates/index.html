@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Астрономічний малюнок дня</title>
+    <!-- Підключаємо шрифт з Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+
+    <div class="container">
+        <h1>Астрономічний малюнок дня</h1>
+        
+        <form method="POST">
+            <label for="date">Введіть будь ласка дату (YYYY-MM-DD):</label>
+            <input type="text" id="date" name="date" value="{{ date }}" required>
+            <button type="submit">Отримати картинку</button>
+        </form>
+
+        {% if image_url %}
+            <div class="image-container">
+                <h2>Малюнок для {{ date }}:</h2>
+                <img src="{{ image_url }}" alt="Astronomy Picture">
+            </div>
+        {% endif %}
+
+    </div>
+
+</body>
+</html>
+
+
