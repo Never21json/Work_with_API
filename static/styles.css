@@ -5,14 +5,23 @@ body {
     color: #f5f5f5;
     margin: 0;
     padding: 20px;
+    line-height: 1.6; /* Покращує читабельність тексту */
+    scroll-behavior: smooth; /* Плавне прокручування сторінки */
+    overflow-x: hidden; /* Видаляє горизонтальну прокрутку */
 }
 
+/* Контейнер */
 .container {
     max-width: 900px;
     margin: 0 auto;
     text-align: center;
+    padding: 20px;
+    border: 1px solid #444; /* Легкий бордер для контейнера */
+    border-radius: 10px; /* Додає округлені кути */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* Покращена тінь для ефекту */
 }
 
+/* Заголовки */
 h1 {
     font-size: 36px;
     color: #e74c3c;
@@ -21,8 +30,10 @@ h1 {
     font-weight: 600;
     letter-spacing: 2px;
     animation: fadeIn 1s ease-out;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Додає тінь для тексту */
 }
 
+/* Форма */
 form {
     background-color: #333;
     padding: 20px;
@@ -47,6 +58,13 @@ input[type="text"] {
     margin-top: 10px;
     background-color: #444;
     color: #fff;
+    transition: box-shadow 0.3s, transform 0.2s ease-in-out;
+}
+
+input[type="text"]:focus {
+    outline: none;
+    box-shadow: 0 0 10px #3498db;
+    transform: scale(1.05); /* Легкий ефект збільшення при фокусі */
 }
 
 button {
@@ -57,11 +75,35 @@ button {
     border: none;
     border-radius: 4px;
     cursor: pointer;
-    transition: background-color 0.3s;
+    transition: background-color 0.3s, transform 0.2s ease-in-out;
+    font-weight: bold;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Додає тінь кнопкам */
 }
 
 button:hover {
     background-color: #2980b9;
+}
+
+button:active {
+    transform: scale(0.95); /* Легкий ефект натискання */
+}
+
+/* Випадаючі списки */
+select {
+    padding: 10px;
+    font-size: 16px;
+    border: none;
+    border-radius: 4px;
+    background-color: #444;
+    color: white;
+    margin-top: 10px;
+    cursor: pointer;
+    transition: box-shadow 0.3s ease;
+}
+
+select:focus {
+    outline: none;
+    box-shadow: 0 0 10px #3498db;
 }
 
 /* Стилі для картинки */
@@ -75,14 +117,37 @@ img {
     height: auto;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-    transition: transform 0.3s ease;
+    filter: grayscale(20%); /* Легкий монохромний ефект */
+    border: 2px solid #555;
+    transition: transform 0.3s ease, filter 0.3s;
 }
 
 img:hover {
-    transform: scale(1.05);
+    transform: scale(1.08) rotate(1deg); /* Невелике обертання при наведенні */
+    filter: grayscale(0); /* Повертає кольори при наведенні */
 }
 
-/* Анімація */
+/* Стиль футера */
+footer {
+    margin-top: 50px;
+    padding: 20px;
+    text-align: center;
+    background-color: #222;
+    color: #aaa;
+    border-top: 1px solid #444;
+}
+
+footer a {
+    color: #3498db;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+footer a:hover {
+    color: #e74c3c;
+}
+
+/* Анімації */
 @keyframes fadeIn {
     from {
         opacity: 0;
@@ -100,4 +165,3 @@ img:hover {
         transform: translateY(0);
     }
 }
-
